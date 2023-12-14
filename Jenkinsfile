@@ -2,8 +2,8 @@ pipeline {
     agent any
     
     
-    stages('Checkout'){
-        stage {
+    stages{
+        stage('Checkout'){
             steps {
                 script {
                     git 'https://github.com/jiad-saegus/node-jenkins'
