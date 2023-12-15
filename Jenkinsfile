@@ -6,7 +6,7 @@ pipeline {
         stage('Checkout'){
             steps {
                 script {
-                    git 'https://github.com/jiad-saegus/node-jenkins'
+                    git branch: 'main', url: 'https://github.com/jiad-saegus/node-jenkins'
                 }
             }
         }
