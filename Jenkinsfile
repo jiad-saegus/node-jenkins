@@ -20,7 +20,9 @@ pipeline {
                     ansiblePlaybook(
                         playbook: 'playbook.yml',
                         inventory: 'inventory.ini',
-                        extras: "-e ansible_version=${ANSIBLE_VERSION}"
+                        extras: "-e ansible_version=${ANSIBLE_VERSION}",
+                        name: 'ansible'
+
                     )
                 }
             }
