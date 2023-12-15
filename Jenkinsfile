@@ -15,8 +15,8 @@ pipeline {
             steps {
                 script {
                     ansiblePlaybook(
-                        playbook: './playbook.yml',
-                        inventory: './inventory.ini'
+                        playbook: 'playbook.yml',
+                        inventory: 'inventory.ini'
                         )
                 }
             }
