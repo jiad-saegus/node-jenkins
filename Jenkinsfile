@@ -16,7 +16,8 @@ pipeline {
                 script {
                     ansiblePlaybook(
                         playbook: 'playbook.yml',
-                        inventory: 'inventory.ini'
+                        inventory: 'inventory.ini',
+                        installation: 'ansible'
                         )
                 }
             }
