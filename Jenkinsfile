@@ -16,7 +16,7 @@ pipeline {
                 script {
                     ansiblePlaybook(
                         playbook: '/usr/src/app/playbook.yml',
-                        inventory: '/usr/src/app/inventory.yml'
+                        inventory: '/usr/src/app/inventory.ini'
                         )
                 }
             }
