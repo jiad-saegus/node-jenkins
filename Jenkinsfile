@@ -1,9 +1,12 @@
 pipeline {
     agent any
     
-    
-    stages{
-        stage('Checkout'){
+    environment {
+        ANSIBLE_VERSION = '2.9.27' // Specify the Ansible version you need
+    }
+
+    stages {
+        stage('Checkout') {
             steps {
                 script {
                     git branch: 'main', url: 'https://github.com/jiad-saegus/node-jenkins'
@@ -11,14 +14,14 @@ pipeline {
             }
         }
         
-        stage('Deploy'){
+        stage('Deploy') {
             steps {
                 script {
                     ansiblePlaybook(
                         playbook: 'playbook.yml',
                         inventory: 'inventory.ini',
-                        installation: 'ansible'
-                        )
+                        extras: "-e ansible_version=${ANSIBLE_VERSION}"
+                    )
                 }
             }
         }
